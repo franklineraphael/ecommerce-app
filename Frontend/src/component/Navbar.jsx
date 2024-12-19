@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets-2/img7.png";
-import image from "../assets-2/search_icon.png";
-import image1 from "../assets-2/profile_icon.png";
-import image2 from "../assets-2/cart_icon.png";
-import image3 from "../assets-2/menu_icon.png";
-import image4 from "../assets-2/dropdown_icon.png";
+import logo from "../assets-2/frontend_assets/img7.png";
+import image from "../assets-2/frontend_assets/search_icon.png";
+import image1 from "../assets-2/frontend_assets/profile_icon.png";
+import image2 from "../assets-2/frontend_assets/cart_icon.png";
+import image3 from "../assets-2/frontend_assets/menu_icon.png";
+import image4 from "../assets-2/frontend_assets/dropdown_icon.png";
+import { ShopContext } from "../ShopContext/shopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const { setShowSearch, getCartCount } = useContext(ShopContext);
+
   return (
     <div className="flex items-center justify-between font-medium">
-      <img src={logo} className="w-40" />
+      <Link to={"/"}>
+        <img src={logo} className="w-40" />
+      </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
@@ -28,7 +33,12 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
-        <img src={image} alt="" className="w-5 cursor-pointer" />
+        <img
+          onClick={() => setShowSearch(true)}
+          src={image}
+          alt=""
+          className="w-5 cursor-pointer"
+        />
         <div className="group relative">
           <img src={image1} alt="" className="w-5 cursor-pointer" />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
@@ -42,7 +52,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <img src={image2} alt="" className="w-5 min-w-5" />
           <p className="absolute w-4 right-[-5px] bottom-[-5px] leading-4 text-center bg-black text-white aspect-square rounded-full text-[8px]">
-            10
+            {getCartCount()}
           </p>
         </Link>
         <img
