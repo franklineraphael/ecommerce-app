@@ -21,8 +21,9 @@ const Hero = () => {
             <p className="font-medium text-sm md:text-base"></p>
           </div>
         </div>
-      </div> */}
-      <video autoPlay muted loop src={video1} width={500}></video>
+      // </div> */}
+      {/* // <video autoPlay muted loop src={video1} width={500}></video> */}
+      <img src="/name.jpg" alt="" className="w-[100%]" />
     </div>
   );
 };
