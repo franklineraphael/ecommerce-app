@@ -5,7 +5,7 @@ import Home from "./Page/Home";
 import Collection from "./Page/Collection";
 import About from "./Page/About";
 import Contact from "./Page/Contact";
-import Product from "./Page/product";
+import Product from "./Page/Product";
 import Cart from "./Page/Cart";
 import Login from "./Page/Login";
 import Orders from "./Page/Orders";
