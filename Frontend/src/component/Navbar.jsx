@@ -39,6 +39,7 @@ const Navbar = () => {
           alt=""
           className="w-5 cursor-pointer"
         />
+        {/* this is when creating features all in one div */}
         <div className="group relative">
           <Link to={"/login"}>
             <img src={image1} alt="" className="w-5 cursor-pointer" />
