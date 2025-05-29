@@ -13,9 +13,9 @@ const Navbar = () => {
   const { setShowSearch, getCartCount } = useContext(ShopContext);
 
   return (
-    <div className="flex items-center justify-between font-medium">
+    <div className="flex items-center justify-between font-medium mt-10 mb-10">
       <Link to={"/"}>
-        <img src={logo} className="w-40" />
+        <h1 className="text-3xl font-bold ">Cartmax</h1>
       </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
